@@ -102,7 +102,7 @@ export const FEATURED_YACHTS: Yacht[] = [
     crew: 15,
     speed: "17 Knots",
     weeklyRate: "€580,000",
-    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-2.webp",
     description: "Contemporary Italian luxury with panoramic sun deck jacuzzi, outdoor cinema, and full suite of water toys.",
     location: "Balearics • Ibiza",
   },
@@ -117,7 +117,7 @@ export const FEATURED_YACHTS: Yacht[] = [
     crew: 28,
     speed: "19 Knots",
     weeklyRate: "€1,200,000",
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-1.webp",
     badge: "FLAGSHIP",
     description: "Unrivalled mega yacht boasting a full wellness deck, Michelin-starred culinary team, and personal submarine.",
     location: "Greek Isles • Mykonos",
@@ -133,7 +133,7 @@ export const DESTINATION_HIGHLIGHTS: DestinationItem[] = [
     destSlug: "french-riviera",
     subtitle: "Monaco • Saint-Tropez • Amalfi • Balearics",
     description: "Cruise between glamorous harbors, Michelin-starred coastal dining, and historic cliffside fortresses in crystal Mediterranean waters.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=80",
+    image: "/background-2.jpg",
     highlights: ["Monaco Grand Prix Mooring", "Amalfi Cliffside Anchorages", "Ibiza Beach Clubs"],
   },
   {
@@ -144,7 +144,7 @@ export const DESTINATION_HIGHLIGHTS: DestinationItem[] = [
     destSlug: "st-barths",
     subtitle: "St. Barth's • Virgin Islands • Antigua",
     description: "Basking in trade wind breezes, turquoise lagoons, white sand coves, and world-class offshore sailing conditions.",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80",
+    image: "/background-3.jpg",
     highlights: ["St. Barth's New Year Regatta", "Virgin Gorda Baths", "Antigua Yacht Club"],
   },
   {
@@ -249,6 +249,6 @@ export const FEATURED_JOURNAL_POSTS: JournalArticle[] = [
     excerpt: "How modern shipbuilders are pairing hydrogen fuel cells and solar sails to preserve pristine oceanic ecosystems.",
     readTime: "8 Min Read",
     date: "July 18, 2026",
-    image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1000&q=80",
+    image: "/yacht-x1.webp",
   },
 ];

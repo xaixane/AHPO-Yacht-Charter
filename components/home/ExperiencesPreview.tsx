@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { EXPERIENCE_PREVIEWS } from "@/lib/data/homepage";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function ExperiencesPreview() {
   return (
@@ -11,7 +12,7 @@ export function ExperiencesPreview() {
           Experiences
         </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-10" stagger={0.15}>
           {EXPERIENCE_PREVIEWS.map((exp) => (
             <Link key={exp.id} href={`/enquire?experience=${encodeURIComponent(exp.title)}`} className="group space-y-4 block">
               <div className="relative aspect-[3/2] overflow-hidden">
@@ -39,7 +40,7 @@ export function ExperiencesPreview() {
               </div>
             </Link>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { DESTINATION_HIGHLIGHTS } from "@/lib/data/homepage";
+import { Reveal } from "@/components/motion/Reveal";
 
 const FEATURED_DESTINATION = DESTINATION_HIGHLIGHTS[0];
 
@@ -12,7 +13,7 @@ export function DestinationShowcase() {
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Intro Column */}
-          <div className="lg:col-span-3 space-y-5">
+          <Reveal className="lg:col-span-3 space-y-5">
             <span className="text-xs uppercase tracking-[0.2em] text-[#6B6B65] font-semibold block">
               Destinations
             </span>
@@ -26,20 +27,20 @@ export function DestinationShowcase() {
               <span>Explore Destinations</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </Reveal>
 
           {/* Center Photography */}
-          <div className="lg:col-span-6 relative aspect-[3/2] w-full overflow-hidden">
+          <Reveal className="lg:col-span-6 relative aspect-[3/2] w-full overflow-hidden" delay={0.15}>
             <Image
               src={FEATURED_DESTINATION.image}
               alt={FEATURED_DESTINATION.title}
               fill
               className="object-cover"
             />
-          </div>
+          </Reveal>
 
           {/* Right Detail Column */}
-          <div className="lg:col-span-3 space-y-3">
+          <Reveal className="lg:col-span-3 space-y-3" delay={0.3}>
             <h3 className="font-sans text-xl font-bold tracking-tight uppercase">
               {FEATURED_DESTINATION.title}
             </h3>
@@ -53,7 +54,7 @@ export function DestinationShowcase() {
               <span>Discover</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

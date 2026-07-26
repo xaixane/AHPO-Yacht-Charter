@@ -17,8 +17,8 @@ export default function AboutPage() {
       <section className="relative pt-32 pb-16 px-6 sm:px-12 lg:px-16">
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[42%] hidden md:block">
           <Image
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1400&q=80"
-            alt="Superyacht bow at sea"
+            src="/section-2.png"
+            alt="Superyacht underway at sea"
             fill
             priority
             className="object-cover"

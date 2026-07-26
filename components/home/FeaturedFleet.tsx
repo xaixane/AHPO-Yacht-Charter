@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { FEATURED_YACHTS } from "@/lib/data/homepage";
+import { Reveal } from "@/components/motion/Reveal";
 
 const SPOTLIGHT = FEATURED_YACHTS.slice(0, 2);
 
@@ -12,7 +13,7 @@ export function FeaturedFleet() {
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Left Intro Column */}
-          <div className="lg:col-span-3 space-y-5">
+          <Reveal className="lg:col-span-3 space-y-5">
             <span className="text-xs uppercase tracking-[0.2em] text-[#6B6B65] font-semibold block">
               The Fleet
             </span>
@@ -26,14 +27,14 @@ export function FeaturedFleet() {
               <span>View All Yachts</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </Reveal>
 
           {/* Right Spotlight Rows */}
           <div className="lg:col-span-9 space-y-16">
             {SPOTLIGHT.map((yacht, idx) => {
               const reversed = idx % 2 === 1;
               return (
-                <div
+                <Reveal
                   key={yacht.id}
                   className={`flex flex-col ${
                     reversed ? "md:flex-row-reverse" : "md:flex-row"
@@ -63,7 +64,7 @@ export function FeaturedFleet() {
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FEATURED_JOURNAL_POSTS } from "@/lib/data/homepage";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function JournalFeatured() {
   const [feature, secondary] = FEATURED_JOURNAL_POSTS;
@@ -11,7 +12,7 @@ export function JournalFeatured() {
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Left Intro Column */}
-          <div className="lg:col-span-3 space-y-5">
+          <Reveal className="lg:col-span-3 space-y-5">
             <span className="text-xs uppercase tracking-[0.2em] text-[#6B6B65] font-semibold block">
               Journal
             </span>
@@ -25,11 +26,11 @@ export function JournalFeatured() {
               <span>Explore Journal</span>
               <span aria-hidden>→</span>
             </Link>
-          </div>
+          </Reveal>
 
           {/* Feature Article */}
           {feature && (
-            <div className="lg:col-span-5 space-y-3">
+            <Reveal className="lg:col-span-5 space-y-3" delay={0.15}>
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image src={feature.image} alt={feature.title} fill className="object-cover" />
               </div>
@@ -41,12 +42,12 @@ export function JournalFeatured() {
               >
                 Read More <span aria-hidden>→</span>
               </Link>
-            </div>
+            </Reveal>
           )}
 
           {/* Secondary Stacked Articles */}
           {secondary && (
-            <div className="lg:col-span-4 space-y-3">
+            <Reveal className="lg:col-span-4 space-y-3" delay={0.3}>
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image src={secondary.image} alt={secondary.title} fill className="object-cover" />
               </div>
@@ -58,7 +59,7 @@ export function JournalFeatured() {
               >
                 Read More <span aria-hidden>→</span>
               </Link>
-            </div>
+            </Reveal>
           )}
         </div>
       </div>

@@ -86,10 +86,12 @@ Yacht detail (`/yachts/[slug]`), Compare, Availability, Booking, Thank-you, and 
 
 ---
 
-## 4. Known Gaps (not introduced by this redesign, carried over from prior data)
+## 4. Image Assets
 
-* `lib/data/yachts.ts` has mismatched stock photography for several vessels (Ocean Pearl → Tokyo street; Solaris V / Monaco Star → Cinque Terre village; Aegean Crest → Pacific lagoon; Arctic Voyager → scuba diver; Caribbean Breeze → beach). Only Azure One and Luna Sea have verified genuine yacht photography. Visible on the Fleet grid, homepage spotlight avoided this by only featuring the two verified vessels, but the Fleet page and yacht-detail similar-yachts grid still surface the mismatched images.
-* Homepage "Culinary Journeys" experience card image is a coffee-shop interior, not a plated dish — same category of pre-existing data mismatch.
+All 8 fleet vessels now carry real, distinct yacht photography sourced from the client's own `assets/` folder (copied into `public/` as `yacht-1.webp`…`yacht-4.webp`, `moonrise.webp`, `riviera-dusk.webp`), resolving the earlier stock-photo mismatches (Ocean Pearl/Tokyo street, Solaris V & Monaco Star/Cinque Terre, Aegean Crest/Pacific lagoon, Arctic Voyager/scuba diver, Caribbean Breeze/beach). Each vessel's `image` and single-item `gallery` now point to the same real photo — galleries were simplified to one photo per vessel rather than padding them with other yachts' images. The four `background-*.jpg` aerial coastal photos replace stock imagery in the homepage Destinations feature and the three Contact office cards. About and Enquire's bleeding side images were diversified (`section-2.png`, `section-3.png`) instead of both reusing the Hero photo.
+
+**Known Gaps (not introduced by this redesign, no client asset available yet):**
+* Homepage "Culinary Journeys" experience card image is a coffee-shop interior, not a plated dish — no food photography was supplied to fix this.
 * `/thank-you`'s secondary CTA was repointed from a dead `/destinations` link to `/contact` (that route doesn't exist yet per `PRODUCT.md`), a small in-scope fix made while touching that file.
 
 ---

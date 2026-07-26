@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { gsap } from "gsap";
 import { MAIN_NAVIGATION } from "@/lib/navigation";
 
 export function Navbar() {
@@ -11,6 +12,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const indicatorRef = useRef<HTMLDivElement>(null);
+  const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +31,52 @@ export function Navbar() {
     setActiveDropdown(null);
   }, [pathname]);
 
+  // Smoothly tween the header's chrome (background, border, padding) across
+  // the scrolled/unscrolled states instead of an instant class swap.
+  useLayoutEffect(() => {
+    if (!headerRef.current) return;
+    gsap.to(headerRef.current, {
+      backgroundColor: isScrolled ? "#FFFFFF" : "rgba(255,255,255,0)",
+      borderBottomColor: isScrolled ? "#E4E2DC" : "rgba(228,226,220,0)",
+      paddingTop: isScrolled ? 16 : 24,
+      paddingBottom: isScrolled ? 16 : 24,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, [isScrolled]);
+
+  // Sliding hover indicator: tweens from its current position/width to the
+  // hovered link's, rather than jumping, so it visibly slides between links.
+  const handleLinkEnter = (index: number) => {
+    const link = linkRefs.current[index];
+    const nav = navRef.current;
+    const indicator = indicatorRef.current;
+    if (!link || !nav || !indicator) return;
+    const linkRect = link.getBoundingClientRect();
+    const navRect = nav.getBoundingClientRect();
+    gsap.to(indicator, {
+      x: linkRect.left - navRect.left,
+      width: linkRect.width,
+      opacity: 1,
+      duration: 0.45,
+      ease: "power3.out",
+    });
+  };
+
+  const handleNavLeave = () => {
+    gsap.to(indicatorRef.current, { opacity: 0, duration: 0.3, ease: "power2.out" });
+  };
+
+  // Over the hero photo (home page, not yet scrolled) the nav sits on a dark
+  // image, so it inverts to a light/white scheme until scroll brings the
+  // solid white bar in.
+  const isLight = pathname === "/" && !isScrolled;
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white border-b border-[#E4E2DC] py-4" : "bg-transparent py-6"
-      }`}
+      ref={headerRef}
+      className="fixed top-0 left-0 right-0 z-50 border-b"
+      style={{ backgroundColor: "rgba(255,255,255,0)", borderBottomColor: "rgba(228,226,220,0)", paddingTop: 24, paddingBottom: 24 }}
     >
       <div className="px-6 sm:px-12 lg:px-[5%] flex items-center justify-between">
         {/* Brand Logo */}
@@ -43,8 +90,20 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
-          {MAIN_NAVIGATION.map((item) => {
+        <nav
+          ref={navRef}
+          className="hidden lg:flex items-center gap-8 relative"
+          aria-label="Main Navigation"
+          onMouseLeave={handleNavLeave}
+        >
+          {/* Sliding hover indicator */}
+          <div
+            ref={indicatorRef}
+            className="absolute top-0 left-0 h-full bg-white border border-[#E4E2DC] opacity-0 pointer-events-none"
+            style={{ width: 0 }}
+          />
+
+          {MAIN_NAVIGATION.map((item, index) => {
             const isActive =
               pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
             const hasItems = item.items && item.items.length > 0;
@@ -57,8 +116,12 @@ export function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
+                  ref={(el) => {
+                    linkRefs.current[index] = el;
+                  }}
                   href={item.href}
-                  className={`flex items-center gap-1 text-xs tracking-[0.15em] uppercase transition-colors py-2 font-semibold ${
+                  onMouseEnter={() => handleLinkEnter(index)}
+                  className={`relative z-10 flex items-center gap-1 text-xs tracking-[0.15em] uppercase py-2 px-3 -mx-3 font-semibold transition-colors ${
                     isActive ? "text-[#0F0F0E] underline underline-offset-4" : "text-[#0F0F0E]/70 hover:text-[#0F0F0E]"
                   }`}
                 >
@@ -106,7 +169,11 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-5">
           <Link
             href="/enquire"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#0F0F0E] text-[#0F0F0E] text-xs font-semibold tracking-wider uppercase hover:bg-[#0F0F0E] hover:text-white transition-colors"
+            className={`inline-flex items-center gap-2 px-5 py-2.5 border text-xs font-semibold tracking-wider uppercase transition-colors ${
+              isLight
+                ? "border-white text-white hover:bg-white hover:text-[#0F0F0E]"
+                : "border-[#0F0F0E] text-[#0F0F0E] hover:bg-[#0F0F0E] hover:text-white"
+            }`}
           >
             <span>Enquire</span>
             <ArrowRight className="w-3.5 h-3.5" />

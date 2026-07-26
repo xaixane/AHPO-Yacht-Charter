@@ -19,7 +19,7 @@ export const GLOBAL_OFFICES: OfficeLocation[] = [
     phone: "+377 99 90 90 90",
     email: "monaco@ahpoyachts.com",
     hours: "24/7 Concierge Desk",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80",
+    image: "/background-1.jpg",
     isHeadquarters: true,
   },
   {
@@ -30,7 +30,7 @@ export const GLOBAL_OFFICES: OfficeLocation[] = [
     phone: "+1 305 555 0199",
     email: "miami@ahpoyachts.com",
     hours: "08:00 - 20:00 EST",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80",
+    image: "/background-4.jpg",
   },
   {
     id: "singapore",
@@ -40,6 +40,6 @@ export const GLOBAL_OFFICES: OfficeLocation[] = [
     phone: "+65 6789 0100",
     email: "singapore@ahpoyachts.com",
     hours: "09:00 - 19:00 SGT",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80",
+    image: "/background-2.jpg",
   },
 ];

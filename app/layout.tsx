@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/navigation/Footer";
+import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased font-sans bg-white text-[#0F0F0E] min-h-screen flex flex-col selection:bg-[#0F0F0E] selection:text-white">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <SmoothScrollProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

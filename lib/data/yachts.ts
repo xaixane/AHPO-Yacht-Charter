@@ -75,9 +75,6 @@ export const YACHTS_DATA: YachtFull[] = [
     image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80",
     ],
     description: "Multi-award winning custom superyacht featuring a duplex owner's suite, glass bottom swimming pool, certified touch-and-go helipad, and zero-speed quantum stabilizers.",
     highlights: [
@@ -150,8 +147,6 @@ export const YACHTS_DATA: YachtFull[] = [
     image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80",
     ],
     description: "Sleek Dutch craftsmanship boasting an expansive beach club spa, contra-flow swimming pool, and underwater viewing lounge.",
     highlights: [
@@ -203,9 +198,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "€",
     featured: true,
     popular: true,
-    image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-2.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80",
+      "/yacht-2.webp",
     ],
     description: "Contemporary Italian luxury with panoramic sun deck jacuzzi, outdoor cinema, and full suite of water toys.",
     highlights: [
@@ -250,9 +245,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "€",
     featured: true,
     popular: false,
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-1.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+      "/yacht-1.webp",
     ],
     description: "Unrivalled mega yacht boasting a full wellness deck, Michelin-starred culinary team, and personal 3-person submersible.",
     highlights: [
@@ -297,9 +292,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "€",
     featured: false,
     popular: true,
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-3.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80",
+      "/yacht-3.webp",
     ],
     description: "Iconic Italian sailing yacht offering authentic wind-powered elegance coupled with high-tech carbon fiber rigging and luxury staterooms.",
     highlights: [
@@ -343,9 +338,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "€",
     featured: false,
     popular: false,
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80",
+    image: "/moonrise.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80",
+      "/moonrise.webp",
     ],
     description: "Ice-class luxury explorer yacht built for high-latitude polar expeditions and remote Pacific island discoveries without compromising on 5-star comfort.",
     highlights: [
@@ -389,9 +384,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "$",
     featured: false,
     popular: true,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+    image: "/yacht-4.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      "/yacht-4.webp",
     ],
     description: "Shallow-draft aluminium superyacht tailored specifically for navigating the pristine shallow cays of the Bahamas and Virgin Islands.",
     highlights: [
@@ -435,9 +430,9 @@ export const YACHTS_DATA: YachtFull[] = [
     currency: "€",
     featured: false,
     popular: false,
-    image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+    image: "/riviera-dusk.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+      "/riviera-dusk.webp",
     ],
     description: "Timeless Tim Heywood exterior lines paired with contemporary Reymond Langton interior design for ultimate Mediterranean chartering.",
     highlights: [
