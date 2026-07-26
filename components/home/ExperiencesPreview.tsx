@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { EXPERIENCE_PREVIEWS } from "@/lib/data/homepage";
 import { Reveal } from "@/components/motion/Reveal";
+import { ImageReveal } from "@/components/motion/ImageReveal";
 
 export function ExperiencesPreview() {
   return (
@@ -13,16 +14,16 @@ export function ExperiencesPreview() {
         </span>
 
         <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-10" stagger={0.15}>
-          {EXPERIENCE_PREVIEWS.map((exp) => (
+          {EXPERIENCE_PREVIEWS.map((exp, idx) => (
             <Link key={exp.id} href={`/enquire?experience=${encodeURIComponent(exp.title)}`} className="group space-y-4 block">
-              <div className="relative aspect-[3/2] overflow-hidden">
+              <ImageReveal className="relative aspect-[3/2] overflow-hidden" direction={idx % 2 === 0 ? "left" : "right"}>
                 <Image
                   src={exp.image}
                   alt={exp.title}
                   fill
                   className="object-cover"
                 />
-              </div>
+              </ImageReveal>
               <div className="space-y-1.5">
                 <span className="text-xs text-[#6B6B65] font-semibold block">
                   {exp.number}

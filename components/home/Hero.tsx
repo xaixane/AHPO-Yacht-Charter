@@ -22,8 +22,8 @@ export function Hero() {
         .fromTo(".hero-cta", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.5")
         .fromTo(
           ".hero-image",
-          { scale: 1.12 },
-          { scale: 1, duration: 1.6, ease: "power2.out" },
+          { scale: 1.12, clipPath: "inset(0% 45% 0% 45%)" },
+          { scale: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 1.7, ease: "power3.inOut" },
           0
         );
     }, sectionRef);

@@ -56,6 +56,7 @@ export default function EnquirePage() {
       <GlobalCTABanner
         title="Prefer Direct Phone Consultation?"
         subtitle="Call our Monaco brokerage desk directly at +377 99 90 90 90 for immediate off-market assistance."
+        showPrimaryCta={false}
       />
     </div>
   );

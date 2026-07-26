@@ -5,11 +5,14 @@ import { ArrowRight, PhoneCall } from "lucide-react";
 interface GlobalCTABannerProps {
   title?: string;
   subtitle?: string;
+  /** Hide the "Start Charter Inquiry" button — set this on the Enquire page itself, since linking to the page you're already on is redundant. */
+  showPrimaryCta?: boolean;
 }
 
 export function GlobalCTABanner({
   title = "Looking for Off-Market Superyacht Availability?",
   subtitle = "Many of the world's finest superyachts operate under strict non-disclosure terms. Contact our Monaco office for private listings.",
+  showPrimaryCta = true,
 }: GlobalCTABannerProps) {
   return (
     <section className="py-20 px-6 sm:px-12 lg:px-16 border-t border-[#E4E2DC] bg-white text-[#0F0F0E]">
@@ -25,13 +28,15 @@ export function GlobalCTABanner({
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
-          <Link
-            href="/enquire"
-            className="inline-flex items-center gap-3 px-6 py-3.5 border border-[#0F0F0E] bg-[#0F0F0E] text-white font-semibold text-xs tracking-widest uppercase hover:bg-white hover:text-[#0F0F0E] transition-colors"
-          >
-            <span>Start Charter Inquiry</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          {showPrimaryCta && (
+            <Link
+              href="/enquire"
+              className="inline-flex items-center gap-3 px-6 py-3.5 border border-[#0F0F0E] bg-[#0F0F0E] text-white font-semibold text-xs tracking-widest uppercase hover:bg-white hover:text-[#0F0F0E] transition-colors"
+            >
+              <span>Start Charter Inquiry</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-semibold tracking-widest uppercase border border-[#E4E2DC] text-[#0F0F0E] hover:border-[#0F0F0E] transition-colors"
