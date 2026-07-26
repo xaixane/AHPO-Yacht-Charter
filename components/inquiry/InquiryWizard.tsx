@@ -188,7 +188,7 @@ export function InquiryWizard() {
 
             <div className="p-4 border border-[#E4E2DC] flex items-center gap-3 text-xs text-[#6B6B65]">
               <ShieldCheck className="w-5 h-5 text-[#0F0F0E] flex-shrink-0" />
-              <span>Strict non-disclosure confidentiality guaranteed by AHPO Yachts Monaco.</span>
+              <span>Strict non-disclosure confidentiality guaranteed by VELANTIS Yachts Monaco.</span>
             </div>
           </div>
         )}

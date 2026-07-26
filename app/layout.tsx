@@ -6,18 +6,18 @@ import { SmoothScrollProvider } from "@/components/motion/SmoothScrollProvider";
 
 export const metadata: Metadata = {
   title: {
-    default: "AHPO YACHTS | Exceptional By Design",
-    template: "%s | AHPO YACHTS",
+    default: "VELANTIS YACHTS | Set Sail Beyond The Map",
+    template: "%s | VELANTIS YACHTS",
   },
   description: "A handpicked portfolio of world-class superyachts, motor yachts, sailing vessels, and expedition explorers.",
-  metadataBase: new URL("https://ahpoyachts.com"),
+  metadataBase: new URL("https://velantisyachts.com"),
   keywords: [
     "superyacht charter",
     "luxury yacht charter",
     "mega yacht rentals",
     "mediterranean charter",
     "caribbean luxury yachts",
-    "AHPO yachts",
+    "VELANTIS yachts",
   ],
 };
 
@@ -27,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased font-sans bg-white text-[#0F0F0E] min-h-screen flex flex-col selection:bg-[#0F0F0E] selection:text-white">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className="antialiased font-sans bg-white text-[#0F0F0E] min-h-screen flex flex-col selection:bg-[#0F0F0E] selection:text-white"
+        suppressHydrationWarning
+      >
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-grow">{children}</main>

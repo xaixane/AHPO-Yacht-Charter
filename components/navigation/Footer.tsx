@@ -11,17 +11,21 @@ export function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-baseline gap-2">
-              <span className="text-xl tracking-[0.1em] font-bold uppercase">AHPO</span>
+              <span className="text-xl tracking-[0.1em] font-bold uppercase">VELANTIS</span>
               <span className="text-[10px] tracking-[0.25em] text-[#6B6B65] uppercase font-medium">
                 Yachts &amp; Charters
               </span>
             </Link>
 
             <p className="text-xs text-[#6B6B65] leading-relaxed max-w-sm">
-              Tailored superyacht charters, sales, and management. Sailing beyond the ordinary with uncompromised discretion and oceanic luxury.
+              Tailored superyacht charters, sails, and management. Sailing beyond the ordinary with uncompromising discretion and oceanic luxury.
             </p>
 
-            <div className="space-y-2 text-xs text-[#0F0F0E] pt-2">
+            <p className="text-[11px] font-serif italic text-[#0F0F0E]">
+              &ldquo;Set sail beyond the map.&rdquo;
+            </p>
+
+            <div className="space-y-2 text-xs text-[#0F0F0E] pt-1">
               <div className="flex items-center gap-3">
                 <MapPin className="w-3.5 h-3.5 text-[#6B6B65]" />
                 <span>7 Quai Antoine 1er, 98000 Monaco</span>
@@ -32,7 +36,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-3.5 h-3.5 text-[#6B6B65]" />
-                <span>charter@ahpoyachts.com</span>
+                <span>charter@velantisyachts.com</span>
               </div>
             </div>
           </div>
@@ -68,7 +72,7 @@ export function Footer() {
 
         {/* Bottom Legal Bar */}
         <div className="pt-8 border-t border-[#E4E2DC] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6B6B65]">
-          <p>© {new Date().getFullYear()} AHPO Yachts International. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} VELANTIS Yachts International. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
             {FOOTER_NAVIGATION.legal.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-[#0F0F0E] transition-colors">

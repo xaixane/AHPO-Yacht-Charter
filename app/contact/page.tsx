@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Contact Concierge Desk",
-  description: "Reach AHPO Yachts 24/7 concierge office in Monaco, Miami, and Singapore for superyacht charter, sales, and management advisory.",
+  description: "Reach VELANTIS Yachts 24/7 concierge office in Monaco, Miami, and Singapore for superyacht charter, sales, and management advisory.",
   path: "/contact",
 });
 

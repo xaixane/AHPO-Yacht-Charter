@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -30,7 +30,7 @@ export function ImageReveal({
 }: ImageRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window === "undefined" || !ref.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -47,7 +47,7 @@ export function ImageReveal({
           scrollTrigger: {
             trigger: ref.current,
             start,
-            toggleActions: "play reverse play reverse",
+            once: true,
           },
         }
       );

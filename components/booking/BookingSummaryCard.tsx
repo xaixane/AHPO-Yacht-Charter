@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { ShieldCheck, ArrowRight } from "lucide-react";
@@ -17,7 +17,12 @@ export function BookingSummaryCard() {
   const apaEstimate = Math.round(baseRate * 0.3);
   const totalEstimate = baseRate + apaEstimate;
 
+  const [refId, setRefId] = useState("VELANTIS-884920");
   const [isConfirming, setIsConfirming] = useState(false);
+
+  useEffect(() => {
+    setRefId(`VELANTIS-${Math.floor(100000 + Math.random() * 900000)}`);
+  }, []);
 
   const handleConfirm = () => {
     setIsConfirming(true);
@@ -78,14 +83,14 @@ export function BookingSummaryCard() {
           <span>MYBA Charter Agreement Terms</span>
         </div>
         <p className="leading-relaxed">
-          Submitting this hold request reserves priority option status on {vessel.name} for 48 hours without immediate financial commitment. An AHPO broker will issue official MYBA contracts upon review.
+          Submitting this hold request reserves priority option status on {vessel.name} for 48 hours without immediate financial commitment. A VELANTIS broker will issue official MYBA contracts upon review.
         </p>
       </div>
 
       {/* Action Controls */}
       <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="text-xs text-[#6B6B65]">
-          Ref: AHPO-{Math.floor(100000 + Math.random() * 900000)}
+          Ref: {refId}
         </span>
 
         <button

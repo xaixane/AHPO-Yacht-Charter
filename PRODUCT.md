@@ -28,7 +28,7 @@ Current implemented routes: home, fleet listing (`/yachts`), yacht detail (`/yac
 
 ## Brand Commitments
 
-Brand name: AHPO Yachts. Stated HQ: Monaco, with secondary offices referenced in Miami and Singapore. Tone is discreet, editorial, maritime-luxury (see DESIGN.md for the full visual system: obsidian/cream/champagne-gold palette, Cormorant Garamond display serif + Plus Jakarta Sans body).
+Brand name: VELANTIS Yachts. Stated HQ: Monaco, with secondary offices referenced in Miami and Singapore. Tone is discreet, editorial, maritime-luxury (see DESIGN.md for the full visual system: obsidian/cream/champagne-gold palette, Cormorant Garamond display serif + Plus Jakarta Sans body). Tagline: "Set sail beyond the map."
 
 ## Evidence on Hand
 

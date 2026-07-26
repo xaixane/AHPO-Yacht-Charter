@@ -6,8 +6,8 @@ import { CompanyPillars } from "@/components/about/CompanyPillars";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "About AHPO Yachts",
-  description: "AHPO Yachts is the premier global superyacht charter, sales, and management firm headquartered in Monaco.",
+  title: "About VELANTIS Yachts",
+  description: "VELANTIS Yachts is the premier global superyacht charter, sales, and management firm headquartered in Monaco.",
   path: "/about",
 });
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
               OCEANIC LUXURY
             </h1>
             <p className="text-sm sm:text-base text-[#6B6B65] leading-relaxed max-w-md">
-              Founded on the principles of uncompromised discretion, maritime mastery, and personalized service.
+              Founded on the principles of uncompromising discretion, maritime mastery, and personalized service.
             </p>
           </div>
         </div>
@@ -50,9 +50,9 @@ export default function AboutPage() {
           <span className="text-xs uppercase tracking-widest text-[#6B6B65] font-semibold block">
             OUR HERITAGE
           </span>
-          <h2 className="font-sans text-3xl font-bold tracking-tight uppercase">THE AHPO LEGACY</h2>
+          <h2 className="font-sans text-3xl font-bold tracking-tight uppercase">THE VELANTIS LEGACY</h2>
           <p className="text-sm text-[#6B6B65] leading-relaxed">
-            Headquartered in Monaco with advisory desks in Miami and Singapore, AHPO Yachts manages charter representation for world-class superyachts built by Lürssen, Feadship, Benetti, and Oceanco.
+            Headquartered in Monaco with advisory desks in Miami and Singapore, VELANTIS Yachts manages charter representation for world-class superyachts built by Lürssen, Feadship, Benetti, and Oceanco.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
       </section>
 
       <GlobalCTABanner
-        title="Ready to Experience AHPO Yachting?"
+        title="Ready to Experience VELANTIS Yachting?"
         subtitle="Contact our senior charter advisors to discuss custom vessel options and private itineraries."
       />
     </div>

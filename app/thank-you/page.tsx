@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Inquiry Received | Thank You",
-  description: "Thank you for submitting your private charter inquiry with AHPO Yachts. Our senior brokers will contact you shortly.",
+  description: "Thank you for submitting your private charter inquiry with VELANTIS Yachts. Our senior brokers will contact you shortly.",
   path: "/thank-you",
 });
 
@@ -26,7 +26,7 @@ export default function ThankYouPage() {
         </h1>
 
         <p className="text-sm sm:text-base text-[#6B6B65] leading-relaxed">
-          Thank you for choosing AHPO Yachts. A dedicated senior charter broker has been assigned to your request and will provide curated vessel options within 2 hours.
+          Thank you for choosing VELANTIS Yachts. A dedicated senior charter broker has been assigned to your request and will provide curated vessel options within 2 hours.
         </p>
 
         <div className="pt-6 flex flex-wrap items-center justify-center gap-4">

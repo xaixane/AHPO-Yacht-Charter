@@ -42,7 +42,7 @@ export const FOOTER_NAVIGATION = {
     { label: "Request Custom Quote", href: "/enquire" },
   ],
   company: [
-    { label: "About AHPO Yachts", href: "/about" },
+    { label: "About VELANTIS Yachts", href: "/about" },
     { label: "Contact Concierge", href: "/contact" },
   ],
   legal: [

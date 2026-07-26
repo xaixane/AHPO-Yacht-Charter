@@ -1,4 +1,4 @@
-# AHPO Yachts — Design System (`DESIGN.md`)
+# VELANTIS Yachts — Design System (`DESIGN.md`)
 
 > **Brand Identity:** Restrained editorial luxury — curation over aggregation, discretion over spectacle.
 > **Design Philosophy:** Monochrome ink-on-paper composition, generous whitespace, hairline dividers, bold grotesk headlines paired with a quiet serif for secondary voice. No color accent, no glassmorphism, no dark sections.

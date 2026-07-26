@@ -15,8 +15,8 @@ export function YachtQuickViewModal({ yacht, onClose }: YachtQuickViewModalProps
   if (!yacht) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="relative w-full max-w-3xl bg-white border border-[#E4E2DC] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 overflow-y-auto transition-opacity duration-200">
+      <div className="relative w-full max-w-3xl bg-white border border-[#E4E2DC] overflow-hidden transition-all duration-200 scale-100 opacity-100 shadow-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-20 w-8 h-8 bg-white text-[#0F0F0E] flex items-center justify-center border border-[#E4E2DC] hover:border-[#0F0F0E] transition-colors"

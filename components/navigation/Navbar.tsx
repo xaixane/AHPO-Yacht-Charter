@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
@@ -33,7 +33,7 @@ export function Navbar() {
 
   // Smoothly tween the header's chrome (background, border, padding) across
   // the scrolled/unscrolled states instead of an instant class swap.
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!headerRef.current) return;
     gsap.to(headerRef.current, {
       backgroundColor: isScrolled ? "#FFFFFF" : "rgba(255,255,255,0)",
@@ -58,13 +58,13 @@ export function Navbar() {
       x: linkRect.left - navRect.left,
       width: linkRect.width,
       opacity: 1,
-      duration: 0.45,
-      ease: "power3.out",
+      duration: 0.28,
+      ease: "power2.out",
     });
   };
 
   const handleNavLeave = () => {
-    gsap.to(indicatorRef.current, { opacity: 0, duration: 0.3, ease: "power2.out" });
+    gsap.to(indicatorRef.current, { opacity: 0, duration: 0.2, ease: "power2.out" });
   };
 
   // Over the hero photo (home page, not yet scrolled) the nav sits on a dark
@@ -82,7 +82,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="group flex items-center gap-2.5">
           <span className="text-lg tracking-[0.15em] text-[#0F0F0E] font-bold uppercase leading-tight">
-            AHPO
+            VELANTIS
           </span>
           <span className="text-[10px] tracking-[0.25em] text-[#6B6B65] uppercase font-medium border-l border-[#E4E2DC] pl-2.5">
             Yachts &amp; Charters

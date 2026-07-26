@@ -9,7 +9,7 @@ export default function Loading() {
           <div className="absolute inset-0 rounded-full border-2 border-[#0F0F0E] border-t-transparent animate-spin" />
         </div>
         <span className="font-sans text-sm tracking-[0.2em] text-[#0F0F0E] uppercase animate-pulse">
-          AHPO YACHTS
+          VELANTIS YACHTS
         </span>
       </div>
     </div>

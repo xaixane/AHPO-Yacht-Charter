@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Cookie Policy",
-  description: "Learn how AHPO Yachts uses cookies and local browser storage to optimize site performance and retain user preferences.",
+  description: "Learn how VELANTIS Yachts uses cookies and local browser storage to optimize site performance and retain user preferences.",
   path: "/cookies",
 });
 

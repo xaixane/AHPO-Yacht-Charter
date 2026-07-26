@@ -13,14 +13,14 @@ export function buildMetadata({
   path = "",
   image = "/assets/hero-yacht.jpg",
 }: GenerateMetadataProps): Metadata {
-  const siteName = "AHPO YACHTS";
+  const siteName = "VELANTIS YACHTS";
   const fullTitle = `${title} | ${siteName}`;
-  const url = `https://ahpoyachts.com${path}`;
+  const url = `https://velantisyachts.com${path}`;
 
   return {
     title: fullTitle,
     description,
-    metadataBase: new URL("https://ahpoyachts.com"),
+    metadataBase: new URL("https://velantisyachts.com"),
     alternates: {
       canonical: url,
     },
@@ -45,7 +45,7 @@ export function buildMetadata({
       title: fullTitle,
       description,
       images: [image],
-      creator: "@AHPOYachts",
+      creator: "@VelantisYachts",
     },
     robots: {
       index: true,

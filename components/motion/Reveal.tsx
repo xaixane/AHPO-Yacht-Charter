@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -20,15 +20,15 @@ export function Reveal({
   children,
   className,
   as: Tag = "div",
-  y = 60,
+  y = 24,
   delay = 0,
-  duration = 0.9,
+  duration = 0.5,
   stagger,
   start = "top 85%",
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window === "undefined" || !ref.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -45,11 +45,11 @@ export function Reveal({
           duration,
           delay,
           stagger,
-          ease: "power3.out",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: ref.current,
             start,
-            toggleActions: "play reverse play reverse",
+            once: true,
           },
         }
       );
