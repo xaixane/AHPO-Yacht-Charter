@@ -8,8 +8,8 @@ const SPOTLIGHT = FEATURED_YACHTS.slice(0, 2);
 
 export function FeaturedFleet() {
   return (
-    <section className="py-24 px-6 sm:px-12 lg:px-16 bg-white text-[#0F0F0E]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-6 sm:px-12 lg:px-[5%] bg-white text-[#0F0F0E]">
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* Left Intro Column */}
           <div className="lg:col-span-3 space-y-5">

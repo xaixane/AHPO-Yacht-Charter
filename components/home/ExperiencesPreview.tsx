@@ -5,8 +5,8 @@ import { EXPERIENCE_PREVIEWS } from "@/lib/data/homepage";
 
 export function ExperiencesPreview() {
   return (
-    <section className="py-24 px-6 sm:px-12 lg:px-16 bg-white text-[#0F0F0E]">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section className="py-24 px-6 sm:px-12 lg:px-[5%] bg-white text-[#0F0F0E]">
+      <div className="space-y-12">
         <span className="text-xs uppercase tracking-[0.2em] text-[#6B6B65] font-semibold block">
           Experiences
         </span>

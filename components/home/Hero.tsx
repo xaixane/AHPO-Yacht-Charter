@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/HERO.png";
+import heroImage from "@/assets/HERO.webp";
 
 export function Hero() {
   return (
-    <section className="relative flex items-center min-h-[560px] lg:min-h-[680px] pt-24 pb-16 overflow-hidden bg-white text-[#0F0F0E]">
+    <section className="relative flex items-center min-h-screen pt-24 pb-16 overflow-hidden bg-white text-[#0F0F0E]">
       {/* Full-bleed vessel photograph, ship anchored right */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,7 +20,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff_0%,#fff_36%,rgba(255,255,255,0.94)_40%,rgba(255,255,255,0.75)_44%,rgba(255,255,255,0.45)_48%,rgba(255,255,255,0.18)_52%,transparent_57%)]" />
       </div>
 
-      <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16">
+      <div className="relative z-10 w-full px-6 sm:px-12 lg:px-[5%]">
         <div className="max-w-xl space-y-6">
           <span className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#6B6B65] font-semibold">
             <span className="w-6 h-px bg-[#6B6B65]" />

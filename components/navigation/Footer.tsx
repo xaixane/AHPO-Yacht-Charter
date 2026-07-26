@@ -5,8 +5,8 @@ import { FOOTER_NAVIGATION } from "@/lib/navigation";
 
 export function Footer() {
   return (
-    <footer className="bg-white text-[#0F0F0E] border-t border-[#E4E2DC] pt-16 pb-10 px-6 sm:px-12 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-white text-[#0F0F0E] border-t border-[#E4E2DC] pt-16 pb-10 px-6 sm:px-12 lg:px-[5%]">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">

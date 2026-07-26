@@ -8,8 +8,8 @@ const FEATURED_DESTINATION = DESTINATION_HIGHLIGHTS[0];
 
 export function DestinationShowcase() {
   return (
-    <section className="py-24 px-6 sm:px-12 lg:px-16 bg-[#F7F6F3] text-[#0F0F0E]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-6 sm:px-12 lg:px-[5%] bg-[#F7F6F3] text-[#0F0F0E]">
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Intro Column */}
           <div className="lg:col-span-3 space-y-5">

@@ -31,7 +31,7 @@ export function Navbar() {
         isScrolled ? "bg-white border-b border-[#E4E2DC] py-4" : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between">
+      <div className="px-6 sm:px-12 lg:px-[5%] flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="group flex items-center gap-2.5">
           <span className="text-lg tracking-[0.15em] text-[#0F0F0E] font-bold uppercase leading-tight">
