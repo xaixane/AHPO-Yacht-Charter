@@ -1,24 +1,25 @@
-"use client";
+import React from "react";
+import { Hero } from "@/components/home/Hero";
+import { FeaturedFleet } from "@/components/home/FeaturedFleet";
+import { DestinationShowcase } from "@/components/home/DestinationShowcase";
+import { ExperiencesPreview } from "@/components/home/ExperiencesPreview";
+import { JournalFeatured } from "@/components/home/JournalFeatured";
+import { buildMetadata } from "@/lib/seo";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+export const metadata = buildMetadata({
+  title: "AHPO YACHTS | Exceptional By Design",
+  description: "A handpicked portfolio of world-class superyachts, motor yachts, sailing vessels, and expedition explorers.",
+  path: "/",
+});
 
-type IconName = "arrow" | "menu" | "play" | "pin" | "calendar" | "guests" | "heart" | "instagram";
-function Icon({ name, size = 16 }: { name: IconName; size?: number }) {
-  const paths: Record<IconName, React.ReactNode> = {
-    arrow: <><path d="M3 12h17"/><path d="m14 5 7 7-7 7"/></>, menu: <><path d="M4 7h16M4 12h16M4 17h16"/></>,
-    play: <path d="m10 8 6 4-6 4Z" fill="currentColor" stroke="none"/>, pin: <><path d="M12 21s6-4.7 6-10a6 6 0 1 0-12 0c0 5.3 6 10 6 10Z"/><circle cx="12" cy="11" r="2"/></>,
-    calendar: <><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></>, guests: <><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 0 1 0 6M17 14c2.3.5 4 2.5 4 5"/></>,
-    heart: <path d="M20.8 4.8a5.5 5.5 0 0 0-7.8 0L12 5.9l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.9-8.4a5.5 5.5 0 0 0-.1-7.8Z"/>, instagram: <><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r=".7" fill="currentColor" stroke="none"/></>,
-  };
-  return <svg className={`icon icon-${name}`} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
-}
-const Arrow = () => <Icon name="arrow"/>;
-const yachts = [["Azure One", "52m · 12 guests · 11 crew", "From €250,000 / week", "popular"], ["Luna", "45m · 10 guests · 9 crew", "From €210,000 / week", ""], ["Eclipse", "50m · 12 guests · 10 crew", "From €180,000 / week", ""], ["Ocean Pearl", "38m · 8 guests · 7 crew", "From €90,000 / week", ""]];
-
-export default function Home() {
-  const page = useRef<HTMLDivElement>(null);
-  useEffect(() => { gsap.registerPlugin(ScrollTrigger); const ctx = gsap.context(() => { gsap.from(".hero-reveal", { y: 38, opacity: 0, duration: 1.1, stagger: 0.11, ease: "power3.out" }); gsap.from(".booking-bar", { y: 45, opacity: 0, duration: 0.9, delay: 0.55, ease: "power3.out" }); gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => gsap.from(el, { y: 36, opacity: 0, duration: 0.85, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 86%" } })); gsap.utils.toArray<HTMLElement>(".yacht-card").forEach((el, i) => gsap.from(el, { y: 30, opacity: 0, duration: 0.65, delay: i * 0.09, ease: "power3.out", scrollTrigger: { trigger: ".fleet-grid", start: "top 83%" } })); }, page); return () => ctx.revert(); }, []);
-  return <div ref={page} className="site-shell"><section className="hero"><nav className="nav wrap"><a className="brand" href="#top"><span className="brand-mark">A</span><span>AHPO<small>YACHTS</small></span></a><div className="nav-links"><a href="#fleet">Yachts</a><a href="#destinations">Destinations</a><a href="#experiences">Experiences</a><a href="#about">About</a><a href="#journal">Journal</a></div><div className="nav-actions"><a className="contact-pill" href="#contact">Contact us</a><button className="menu" aria-label="Open menu"><Icon name="menu"/></button></div></nav><div className="hero-content wrap" id="top"><p className="eyebrow hero-reveal">Luxury redefined</p><h1 className="hero-reveal">Sail beyond<br/>the ordinary</h1><p className="hero-copy hero-reveal">Private yacht charters crafted around you.<br/>Timeless yachts. Iconic destinations.</p><div className="hero-buttons hero-reveal"><a className="primary-button" href="#fleet">Explore fleet <Arrow/></a><a className="watch-link" href="#film">Watch film <i><Icon name="play" size={10}/></i></a></div></div><aside className="featured-yacht"><span><b>01</b> / 06</span><strong>Azure One</strong><small>52m · 12 guests</small><div className="mini-sail"><span>AHPO</span></div></aside><div className="booking-bar wrap"><div><b><Icon name="pin" size={21}/></b><span><small>Location</small>Where to?</span></div><div><b><Icon name="calendar" size={19}/></b><span><small>Check in</small>Add dates</span></div><div><b><Icon name="calendar" size={19}/></b><span><small>Check out</small>Add dates</span></div><div><b><Icon name="guests" size={20}/></b><span><small>Guests</small>2 guests</span></div><a className="availability" href="#contact">Check availability <Arrow/></a></div></section><main><section className="wrap fleet-section" id="fleet"><div className="section-head reveal"><div><p className="eyebrow">Explore our fleet</p><h2>A fleet of<br/>exceptional yachts</h2></div><a className="text-link" href="#all-yachts">View all yachts <Arrow/></a></div><div className="fleet-grid">{yachts.map(([name, details, price, popular], i) => <article className={`yacht-card yacht-${i + 1}`} key={name}><div className="card-photo">{popular && <span className="popular">● Popular</span>}<button aria-label="Save yacht"><Icon name="heart" size={12}/></button><span className="boat-placeholder">Y</span></div><div className="card-info"><h3>{name}</h3><small>{details}</small><p>{price}</p><a href="#contact" aria-label={`Enquire about ${name}`}><Arrow/></a></div></article>)}</div></section><section className="wrap split-section" id="destinations"><div className="split-copy reveal"><p className="eyebrow">Destinations</p><h2>Iconic places.<br/>Endless possibilities.</h2><p>From the Mediterranean to the Caribbean, explore the world&apos;s most breathtaking destinations by sea.</p><a className="primary-button" href="#contact">Explore destinations <Arrow/></a></div><div className="destination-image reveal"><div className="destination-list"><span><b>01</b> The Mediterranean</span><span><b>02</b> The Caribbean</span><span><b>03</b> The Bahamas</span><span><b>04</b> French Polynesia</span></div></div></section><section className="wrap experiences" id="experiences"><div className="experience-copy reveal"><p className="eyebrow">Tailored experiences</p><h2>More than<br/>a journey</h2><p>Every detail is considered. Every experience is your world—class dining to discreet adventures, we craft moments that last a lifetime.</p><a className="text-link" href="#contact">Discover experiences <Arrow/></a></div><div className="experience-cards reveal">{[["Culinary journeys", "Savor exceptional cuisine, anywhere in the world."], ["Adventure", "Explore beyond the horizon with curated experiences."], ["Relaxation", "Unwind in absolute comfort and complete privacy."]].map(([title, copy]) => <article key={title} className="experience-card"><div className="exp-photo"><span>✦</span></div><div><h3>{title}</h3><p>{copy}</p><a href="#contact"><Arrow/></a></div></article>)}</div></section><section className="press wrap reveal"><span>As featured in</span><b>RobbReport</b><b>BOAT<small>International</small></b><b>yacht<small>STYLE</small></b><b>Forbes</b><b>TRAVEL+<br/>LEISURE</b><b>LUXURY<small>TRAVEL ADVISOR</small></b></section><section className="contact-section" id="contact"><div className="wrap contact-grid"><div className="contact-copy reveal"><h2>Ready to plan<br/>your escape?</h2><p>Our team is here to craft your perfect yacht experience.</p><a className="contact-pill" href="mailto:hello@ahpo.yachts">Contact our team <Arrow/></a></div><form className="enquiry reveal"><div><label>Full name<input aria-label="Full name"/></label><label>Email address<input aria-label="Email address" type="email"/></label></div><div><label>Phone number<input aria-label="Phone number"/></label><label>Destination of interest<input aria-label="Destination of interest"/></label></div><label>Tell us about your dream voyage<textarea aria-label="Tell us about your dream voyage"/></label><button type="button"><span>Send enquiry</span><Arrow/></button></form></div></section></main><footer className="wrap"><a className="brand" href="#top"><span className="brand-mark">A</span><span>AHPO<small>YACHTS</small></span></a><div><a href="#fleet">Yachts</a><a href="#destinations">Destinations</a><a href="#experiences">Experiences</a><a href="#about">About</a><a href="#journal">Journal</a></div><div className="socials"><span><Icon name="instagram" size={12}/></span><span>f</span><span>in</span></div></footer></div>;
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-[#0F0F0E]">
+      <Hero />
+      <FeaturedFleet />
+      <DestinationShowcase />
+      <ExperiencesPreview />
+      <JournalFeatured />
+    </div>
+  );
 }
